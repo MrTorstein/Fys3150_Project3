@@ -1,4 +1,4 @@
-Project 3
+# Project 3
 
 This is a repository for project 3 in the course Computational Physics at the University of Oslo 
 
