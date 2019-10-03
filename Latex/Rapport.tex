@@ -1,10 +1,37 @@
 \documentclass{emulateapj}
-%\documentclass[12pt,preprint]{aastex}
 
+\usepackage[utf8]{inputenc}
+\usepackage{epsfig, floatflt}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{silence}
 \usepackage{amsmath}
-\usepackage{epsfig,floatflt}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\usepackage{textcomp}
+
+\definecolor{url}{rgb}{0.1, 0.1, 0.4}
+
+\lstset{inputpath = /home/torstein/Dokumenter/UiO/Fys3150/Fys3150_Project3/Scripts}
+\graphicspath{{/home/torstein/Dokumenter/UiO/Fys3150/Fys3150_Project3/Scripts/}}
+\hypersetup{colorlinks, urlcolor=url}
+
+
+% Hvordan includere code snips
+%\lstinputlisting{Filnavn! type kodefil}
+%To crope lines shown insert
+%firstline = <linenumber>, lastline = <linenumber>
+%as kwarg
+
+% Hvordan includere bilder
+%\includegraphics[width=\linewith]{Filnavn! type png}
+%To crop a picture insert 
+%trim = {<left> <lower> <right> <upper>}, clip
+%as kwargs
 
 
 
@@ -14,18 +41,13 @@
 
 \author{Torstein Solheim Ølberg and Ada Mathea S. Veddegjerdet}
 
-\email{torsteol@student.matnat.uio.no}
+\email{torsteol@student.matnat.uio.no \\ amveddeg@student.matnat.uio.no \\}
 
-\altaffiltext{1}{Institute of Theoretical Astrophysics, University of
-  Oslo, P.O.\ Box 1029 Blindern, N-0315 Oslo, Norway}
-
-
-%\date{Received - / Accepted -}
+\altaffiltext{1}{Institute of Physics at the University of Oslo}
 
 \begin{abstract}
   State problem. Briefly describe method and data. Summarize main results.
 \end{abstract}
-\keywords{cosmic microwave background --- cosmology: observations --- methods: statistical}
 
 \section{Introduction}
 \label{sec:introduction}
@@ -43,58 +65,36 @@ likelihood was computed (grid or MCMC).
 
 Define the power law model in terms of $Q$ and $n$. 
 
-\section{Data}
-\label{sec:data}
-
-Summarize properties of data. Which data are used (experiment,
-frequencies etc.)? Pixel resolution ($N_{\textrm{side}}$),
-$\ell_{\textrm{max}}$ -- everything necessary to repeat the analysis
-for other researchers.
-
-Show a sky map of the smoothed data. Use the Healpix routine
-``smoothing'' to do this; it works just like anafast. Smooth with a
-$7^{\circ}$ beam, and plot with ``map2gif''. Show the RMS pattern as
-well. 
-
 \section{Results}
 \label{sec:results}
 
-
-Show the 2D likelihood contours. Summarize constraints on $Q$ and
-$n$. 
-
+Present your results plainly, no discution, calculations or anything else.
 
 \section{Conclusions}
 \label{sec:conclusions}
 
-Summarize results. Discuss their importance, referring to the
-discovery to the initial seeds for structure formation. Mention that
-these results are in good agreement with expectations from
-inflationary theory.
+Summarize results. Discuss their importance, 
 
 
-
+% Hvordan lage en figur
 %\begin{figure}[t]
-%
-%\mbox{\epsfig{figure = ../ast2210/"Python programmer"/<filnavn.png>, width=\linewidth, clip=}}
-%
-%\caption{Description of figure -- explain all elements, but do not
-%draw conclusions here.}
+%\includegraphics[width=\linewidth]{<filnavn>.png}
+%\caption{Description of figure -- explain all elements, but do not draw conclusions here.}
 %\label{fig:figure_label}
 %\end{figure}
 
 
-
-\begin{deluxetable}{lccc}
+% Hvordan lage en tabell
+%\begin{deluxetable}{lccc}
 %\tablewidth{0pt}
-\tablecaption{\label{tab:results}}
-\tablecomments{Summary of main results.}
-\tablecolumns{4}
-\tablehead{Column 1  & Column 2 & Column 3 & Column 4}
-\startdata
-Item 1 & Item 2 & Item 3 & Item 4
-\enddata
-\end{deluxetable}
+%\tablecaption{\label{tab:results}}
+%\tablecomments{Summary of main results.}
+%\tablecolumns{4}
+%\tablehead{Column 1  & Column 2 & Column 3 & Column 4}
+%\startdata
+%Item 1 & Item 2 & Item 3 & Item 4
+%\enddata
+%\end{deluxetable}
 
 
 
@@ -104,8 +104,9 @@ Item 1 & Item 2 & Item 3 & Item 4
 
 \begin{thebibliography}{}
 
-\bibitem[Navnesen! et al.(år!)]{navnesen!:aar!} Tittel!.\ Navnesen!, N!. N!.,
-  Komisen!, K!., Vennesen!, V!. V!., osv.\ aar, Format!, side?!, linje?!, Utgiver!
+%Hvordan sette oppe en referanse
+%\bibitem[Navnesen! et al.(år!)]{navnesen!:aar!} Tittel!.\ Navnesen!, N!, N!;
+%	Komisen!, K!., Vennesen!, V!. V!., osv.\ aar, Format!, side?!, linje?!, Utgiver!
 
 \end{thebibliography}
 
