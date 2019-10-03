@@ -4,4 +4,8 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        GaussLegendreQuadrature.cpp \
         main.cpp
+
+HEADERS += \
+    GaussLegendreQuadrature.h
