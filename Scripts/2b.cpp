@@ -26,23 +26,40 @@ int integrate_gaulag(){
     gauss_legendre(0, PI, theta, w_theta, N);
     gauss_legendre(0, 2*PI, phi, w_phi, N);
 
+    ofstream myfile;
+    myfile.open ("example.txt");
     
-    double integral = 0.;
+    double integral = 0;
     for ( int i0 = 1;  i0 < N+1; i0++){
         for ( int i1 = 1;  i1 < N+1; i1++){
             for ( int i2 = 0;  i2 < N; i2++){
                 for ( int i3 = 0; i3 < N; i3++){
                     for ( int i4 = 0;  i4 < N; i4++){
                         for ( int i5 = 0;  i5 < N; i5++){
+                            myfile << integral/64 << endl;
+                            double cos_beta = (cos(theta[i2])*cos(theta[i3])+sin(theta[i2])*sin(theta[i3])*cos(phi[i4]-phi[i5]));
+                            if (abs(cos_beta - 1) < EPS)
+                            {
+                                cos_beta = 0.999;
+                            }
+                            else
+                            {
+                                cos_beta = (cos(theta[i2])*cos(theta[i3])+sin(theta[i2])*sin(theta[i3])*cos(phi[i4]-phi[i5]));
+                            }
                             integral += w_r[i0]*w_r[i1]*w_theta[i2]*w_theta[i3]*w_phi[i4]*w_phi[i5]*
                             sin(theta[i2])*sin(theta[i3])/sqrt(r[i0]*r[i0]+r[i1]*r[i1]-2*r[i0]*r[i1]*
-                            (cos(theta[i2])*cos(theta[i3])+sin(theta[i2])*sin(theta[i3])*cos(phi[i4]-phi[i5])));
+                            cos_beta);
+                            
+                            //cout << sqrt(r[i0]*r[i0]+r[i1]*r[i1]-2*r[i0]*r[i1]*
+                            //cos_beta) << endl;
                         }
                     }
                 }
             }
         }
     }
+
+    myfile.close();
 
     delete[] r;
     delete[] w_r;
