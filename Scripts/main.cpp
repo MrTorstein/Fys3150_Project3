@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {   
-    cout << integrate_gaulag()/(64) << endl;
+    integrate_gaulag();
 
     return 0;
 }

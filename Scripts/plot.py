@@ -18,3 +18,4 @@ plt.title('Integration approximation by sum')
 plt.xlabel('number of summations')
 plt.ylabel('integrationvalue')
 plt.show()
+
