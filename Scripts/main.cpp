@@ -9,6 +9,8 @@
 
 using namespace std;
 
+double int_function(double);
+
 int main()
 {   
     //Gauss-Legendre
@@ -49,14 +51,14 @@ int main()
 
     Lib->gauleg(-1.0, 1.0,x1,w, N);
     double pi_4 = acos(-1.0)*0.25;
-    for ( int i = 0;  i < n; i++)
+    for ( int i = 0;  i < N; i++)
     {
-        double xx=pi_4*(x[i]+1.0); 
+        double xx=pi_4*(x1[i]+1.0);
         r[i]= tan(xx);
         s[i]=pi_4/(cos(xx)*cos(xx))*w[i];
     }
     double int_gausslegimproved = 0.;
-    for ( int i = 0;  i < n; i++)
+    for ( int i = 0;  i < N; i++)
     {
         int_gausslegimproved += s[i]*int_function(r[i]);     
     }
@@ -64,21 +66,25 @@ int main()
 
     for(int i = 0; i < N; i++)
     {
-        cout << "x = " << x[i] << endl;
+        cout << "x = " << x1[i] << endl;
     }
     for(int i = 0; i < N; i++){
         cout << "w = " << w[i] << endl;
     }
     //cout << "Hello World!" << endl;
 
+    delete [] x1;
+    delete [] x2;
+    delete [] w;
+
     return 0;
 }
 
-double int_function(double x);
+double int_function(double x)
 {
-    int alpha = 2
+    int alpha = 2;
     
-    double value = r_1**2*r_2**2*np.sin(theta_1)*np.sin(theta_2)*np.exp(-2*alpha*(r_1+r_2));
+    double value = alpha;//r_1**2*r_2**2*np.sin(theta_1)*np.sin(theta_2)*np.exp(-2*alpha*(r_1+r_2));
 
     return value;
 }

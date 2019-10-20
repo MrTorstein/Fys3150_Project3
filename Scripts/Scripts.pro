@@ -4,9 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        3b.cpp \
+        2b.cpp \
         GaussLegendreQuadrature.cpp \
         gauss-laguerre.cpp \
+        gauss-legendre.cpp \
         lib.cpp \
         main.cpp
 
@@ -16,4 +17,5 @@ HEADERS += \
     lib.h
 
 DISTFILES += \
+    example.txt \
     main

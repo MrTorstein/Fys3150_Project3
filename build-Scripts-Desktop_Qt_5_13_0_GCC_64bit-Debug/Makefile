@@ -52,17 +52,14 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = 3b.cpp \
-		../Scripts/GaussLegendreQuadrature.cpp \
-		gauss-laguerre.cpp \
+SOURCES       = ../Scripts/GaussLegendreQuadrature.cpp \
 		../Scripts/lib.cpp \
 		../Scripts/main.cpp 
-OBJECTS       = 3b.o \
-		GaussLegendreQuadrature.o \
-		gauss-laguerre.o \
+OBJECTS       = GaussLegendreQuadrature.o \
 		lib.o \
 		main.o
-DIST          = ../Scripts/main \
+DIST          = ../Scripts/example.txt \
+		../Scripts/main \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/common/unix.conf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/common/linux.conf \
@@ -254,9 +251,8 @@ DIST          = ../Scripts/main \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/lex.prf \
 		../Scripts/Scripts.pro GaussLegendreQuadrature.h \
-		lib.h 3b.cpp \
-		../Scripts/GaussLegendreQuadrature.cpp \
-		gauss-laguerre.cpp \
+		gauss-laguerre.h \
+		lib.h ../Scripts/GaussLegendreQuadrature.cpp \
 		../Scripts/lib.cpp \
 		../Scripts/main.cpp
 QMAKE_TARGET  = Scripts
@@ -696,20 +692,19 @@ compiler_clean:
 
 ####### Compile
 
-3b.o: 3b.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o 3b.o 3b.cpp
-
 GaussLegendreQuadrature.o: ../Scripts/GaussLegendreQuadrature.cpp ../Scripts/GaussLegendreQuadrature.h \
 		../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o GaussLegendreQuadrature.o ../Scripts/GaussLegendreQuadrature.cpp
 
-gauss-laguerre.o: gauss-laguerre.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gauss-laguerre.o gauss-laguerre.cpp
-
 lib.o: ../Scripts/lib.cpp ../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lib.o ../Scripts/lib.cpp
 
-main.o: ../Scripts/main.cpp ../Scripts/GaussLegendreQuadrature.h
+main.o: ../Scripts/main.cpp ../Scripts/gauss-laguerre.cpp \
+		../Scripts/gauss-legendre.cpp \
+		../Scripts/2b.cpp \
+		../Scripts/gauss-laguerre.h \
+		../Scripts/GaussLegendreQuadrature.h \
+		../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Scripts/main.cpp
 
 ####### Install
