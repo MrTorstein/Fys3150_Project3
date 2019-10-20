@@ -250,8 +250,8 @@ DIST          = ../Scripts/example.txt \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/exceptions.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/lex.prf \
-		../Scripts/Scripts.pro GaussLegendreQuadrature.h \
-		gauss-laguerre.h \
+		../Scripts/Scripts.pro GaussLaguerre.h \
+		GaussLegendreQuadrature.h \
 		lib.h ../Scripts/GaussLegendreQuadrature.cpp \
 		../Scripts/lib.cpp \
 		../Scripts/main.cpp
@@ -699,10 +699,10 @@ GaussLegendreQuadrature.o: ../Scripts/GaussLegendreQuadrature.cpp ../Scripts/Gau
 lib.o: ../Scripts/lib.cpp ../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lib.o ../Scripts/lib.cpp
 
-main.o: ../Scripts/main.cpp ../Scripts/gauss-laguerre.cpp \
+main.o: ../Scripts/main.cpp ../Scripts/GaussLaguerre.cpp \
 		../Scripts/gauss-legendre.cpp \
 		../Scripts/2b.cpp \
-		../Scripts/gauss-laguerre.h \
+		../Scripts/GaussLaguerre.h \
 		../Scripts/GaussLegendreQuadrature.h \
 		../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Scripts/main.cpp

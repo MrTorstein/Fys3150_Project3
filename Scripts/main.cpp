@@ -1,9 +1,9 @@
 #include <iostream>
-#include "gauss-laguerre.cpp"
+#include "GaussLaguerre.cpp"
 #include "gauss-legendre.cpp"
 #include "2b.cpp"
 
-#include <gauss-laguerre.h>
+#include <GaussLaguerre.h>
 #include <GaussLegendreQuadrature.h>
 #include <lib.h>
 
@@ -18,9 +18,9 @@ int main()
     lib * Lib = new lib;
 
     const int N = 5;
-    double * x1 = new double [N];
+    double * x1 = new double [N + 1];
     double * x2 = new double [N];
-    double * w = new double [N];
+    double * w = new double [N + 1];
     for(int i = 1; i < N; i++)
     {
         x1[i] = 0;

@@ -5,15 +5,15 @@ CONFIG -= qt
 
 SOURCES += \
         2b.cpp \
+        GaussLaguerre.cpp \
         GaussLegendreQuadrature.cpp \
-        gauss-laguerre.cpp \
         gauss-legendre.cpp \
         lib.cpp \
         main.cpp
 
 HEADERS += \
+    GaussLaguerre.h \
     GaussLegendreQuadrature.h \
-    gauss-laguerre.h \
     lib.h
 
 DISTFILES += \

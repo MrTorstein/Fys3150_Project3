@@ -89,3 +89,16 @@ double Legendre(int n, double x)
     return s;
 }
 // end of function Legendre
+
+double lib::Funk(double x1, double x2)
+{
+    if(fabs(x1 - x2) < pow(10, -10))
+    {
+        return 0;
+    }
+    else
+    {
+        return 1 / fabs(sign * x1 - sign * x2) * exp(-2 * (x1 + x2));
+    }
+}
+// End of function Funk
