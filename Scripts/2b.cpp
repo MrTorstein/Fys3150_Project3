@@ -5,7 +5,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <lib.h>
+#include "lib.h"
 
 #define EPS 3.0e-14
 #define MAXIT 10

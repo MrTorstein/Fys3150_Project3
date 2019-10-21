@@ -1,8 +1,8 @@
 #include <iostream>
 #include "2b.cpp"
 
-#include <GaussLegendreQuadrature.h>
-#include <lib.h>
+#include "GaussLegendreQuadrature.h"
+#include "lib.h"
 
 using namespace std;
 
