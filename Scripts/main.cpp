@@ -6,8 +6,6 @@
 
 using namespace std;
 
-double int_function(double);
-
 int main()
 {   
     lib * Lib = new lib;

@@ -2,10 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include <cmath>
 
 #include <stdlib.h>
 #include <stdio.h>
+
 #include "lib.h"
 
 #define EPS 3.0e-14
