@@ -3,9 +3,10 @@
 #include <iomanip>
 #include <cmath>
 
-#include "GaussLegendreQuadrature.h"
 #include <stdlib.h>
 #include <stdio.h>
+
+#include "GaussLegendreQuadrature.h"
 #include "lib.h"
 
 using namespace std;
@@ -56,7 +57,7 @@ double GaussLegendreQuadrature::Solver(int N)
                         for (int n = 0; n < N; n++)
         {
             myfile << Result/1024 << endl;
-            Result += lam * Lib->Funk(lam * (x1[i] + y1[j] + z1[k]), lam * (x2[l] + y2[m] + z2[n])) * w[i];
+            Result += lam * Lib->Funk(lam * (x1[i] + y1[j] + z1[k]), lam * (x2[l] + y2[m] + z2[n])) * w[i] * w[j] * w[k] * w[l] * w[m] * w[n];
         }
 
     myfile << Result/1024 << endl;
