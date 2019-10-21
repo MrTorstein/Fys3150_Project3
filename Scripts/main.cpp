@@ -47,7 +47,7 @@ int main()
     double r[N];
     double s[N];
     //gauss_laguerre(x, w, N, 2);
-    cout << integrate_gaulag()/(64) << endl;
+    integrate_gaulag()
 
     Lib->gauleg(-1.0, 1.0,x1,w, N);
     double pi_4 = acos(-1.0)*0.25;
