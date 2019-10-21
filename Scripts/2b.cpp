@@ -3,8 +3,11 @@
 #include <fstream>
 #include <iomanip>
 #include <cmath>
+
 #include <stdlib.h>
 #include <stdio.h>
+#include <lib.h>
+
 #define EPS 3.0e-14
 #define MAXIT 10
 #define PI 3.14159265358979
@@ -21,7 +24,10 @@ void integrate_gaulag(){
     phi: integration variable
     w_phi: weight function array for phi
     */
-    const int N = 15;
+    lib * Lib = new lib;
+
+    //Arrays for 3b
+    const int N = 5;
     double* r = new double[N+1];
     double* w_r = new double[N+1];
     double* theta = new double[N];
@@ -29,10 +35,10 @@ void integrate_gaulag(){
     double* phi = new double[N];
     double* w_phi = new double[N];
     //Using Gauss-laguerre to fill the arrays where the integration variable goes from 0 to infinity
-    gauss_laguerre(r, w_r, N, 2);
     //Using Gauss-legendre to fill the arrays with defined integration limits
-    gauss_legendre(0, PI, theta, w_theta, N);
-    gauss_legendre(0, 2*PI, phi, w_phi, N);
+    Lib->gauss_laguerre(r, w_r, N, 2);
+    Lib->gauleg(0, PI, theta, w_theta, N);
+    Lib->gauleg(0, 2*PI, phi, w_phi, N);
 
     //Opens file to save integration result
     ofstream myfile;

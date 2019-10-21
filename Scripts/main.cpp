@@ -13,14 +13,15 @@ double int_function(double);
 
 int main()
 {   
+    lib * Lib = new lib;
+    const int N = 5;
+
     //Gauss-Legendre
     GaussLegendreQuadrature * GLQ = new GaussLegendreQuadrature;
-    lib * Lib = new lib;
 
-    const int N = 6;
-    double * x1 = new double [N + 1];
+    double * x1 = new double [N];
     double * x2 = new double [N];
-    double * w = new double [N + 1];
+    double * w = new double [N];
     for(int i = 1; i < N; i++)
     {
         x1[i] = 0;
@@ -44,6 +45,9 @@ int main()
 
 
     //Gauss-laguerre
+
+    double * x = new double [N + 1];
+    double * w = new double [N + 1];
     double r[N];
     double s[N];
     //gauss_laguerre(x, w, N, 2);

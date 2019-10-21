@@ -5,6 +5,8 @@
 class lib
 {
 public:
+    double gammln(double);
+    void gauss_laguerre(double *, double *, int, double);
     void gauleg(double, double, double *, double *, int);
     double Legendre(int, double);
     double Funk(double, double);

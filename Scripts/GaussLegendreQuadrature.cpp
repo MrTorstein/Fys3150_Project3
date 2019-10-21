@@ -15,6 +15,10 @@ double GaussLegendreQuadrature::Solver(int N, double * x1, double * x2, double *
 
     x1[0] = - lam; x1[N - 1] = lam;
     x2[0] = - lam; x2[N - 1] = lam;
+    x3[0] = - lam; x3[N - 1] = lam;
+    x4[0] = - lam; x4[N - 1] = lam;
+    x5[0] = - lam; x5[N - 1] = lam;
+    x6[0] = - lam; x6[N - 1] = lam;
     /*
     for (int i = 0; i < N; i++)
     {
@@ -30,6 +34,11 @@ double GaussLegendreQuadrature::Solver(int N, double * x1, double * x2, double *
     */
 
     for(int i = 0; i < N; i++)
+        for (int j = 0; j < N; j++)
+            for (int k = 0; k < N; k++)
+                for (int l = 0; l < N; l++)
+                    for (int m = 0; m < N; m++)
+                        for (int n = 0; n < N; n++)
         {
             cout << lam * x1[i] + lam << " " << 2 * lam * lam << endl;
             Result += lam * Lib->Funk(lam * x1[i] + lam, 2 * lam * lam) * w[i];
