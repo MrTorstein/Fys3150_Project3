@@ -17,7 +17,7 @@ int main()
     GaussLegendreQuadrature * GLQ = new GaussLegendreQuadrature;
     lib * Lib = new lib;
 
-    const int N = 5;
+    const int N = 6;
     double * x1 = new double [N + 1];
     double * x2 = new double [N];
     double * w = new double [N + 1];
@@ -60,7 +60,7 @@ int main()
     double int_gausslegimproved = 0.;
     for ( int i = 0;  i < N; i++)
     {
-        int_gausslegimproved += s[i]*int_function(r[i]);     
+        int_gausslegimproved += s[i]*int_function(r[i]);
     }
 
 
@@ -84,7 +84,7 @@ double int_function(double x)
 {
     int alpha = 2;
     
-    double value = alpha;//r_1**2*r_2**2*np.sin(theta_1)*np.sin(theta_2)*np.exp(-2*alpha*(r_1+r_2));
+    double value = alpha; //r_1**2*r_2**2*np.sin(theta_1)*np.sin(theta_2)*np.exp(-2*alpha*(r_1+r_2));
 
     return value;
 }

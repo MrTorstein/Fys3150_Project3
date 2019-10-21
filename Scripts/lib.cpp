@@ -9,7 +9,7 @@
  ** of length n of the Gauss--Legendre n--point quadrature formulae.
  */
 
-void gauleg(double x1, double x2, double x[], double w[], int n)
+void lib::gauleg(double x1, double x2, double x[], double w[], int n)
 {
 int         m,j,i;
 double      z1,z,xm,xl,pp,p3,p2,p1;
@@ -74,7 +74,7 @@ z  = z1 - p1/pp;                   // Newton's method
 
 
 // This function computes the Legendre polynomial of degree N
-double Legendre(int n, double x)
+double lib::Legendre(int n, double x)
 {
     double r, s, t;
     int m;
