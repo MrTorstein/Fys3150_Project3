@@ -21,7 +21,7 @@ void integrate_gaulag(){
     phi: integration variable
     w_phi: weight function array for phi
     */
-    const int N = 5;
+    const int N = 15;
     double* r = new double[N+1];
     double* w_r = new double[N+1];
     double* theta = new double[N];
