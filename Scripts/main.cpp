@@ -2,6 +2,7 @@
 #include "2b.cpp"
 
 #include <GaussLegendreQuadrature.h>
+#include <MonteCarlo.h>
 
 using namespace std;
 

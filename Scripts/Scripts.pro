@@ -6,11 +6,13 @@ CONFIG -= qt
 SOURCES += \
         2b.cpp \
         GaussLegendreQuadrature.cpp \
+        MonteCarlo.cpp \
         lib.cpp \
         main.cpp
 
 HEADERS += \
     GaussLegendreQuadrature.h \
+    MonteCarlo.h \
     lib.h
 
 DISTFILES += \
