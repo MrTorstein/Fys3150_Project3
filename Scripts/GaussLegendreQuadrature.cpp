@@ -14,7 +14,7 @@ using namespace std;
 double GaussLegendreQuadrature::Solver(int N)
 {
     lib * Lib = new lib;
-    double tol = pow(10, -10);
+    double tol = pow(10, -2);
     double lam = 1;//- log(tol) / 2;
     double Result = 0;
 

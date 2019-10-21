@@ -698,8 +698,7 @@ GaussLegendreQuadrature.o: ../Scripts/GaussLegendreQuadrature.cpp ../Scripts/Gau
 lib.o: ../Scripts/lib.cpp ../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lib.o ../Scripts/lib.cpp
 
-main.o: ../Scripts/main.cpp ../Scripts/GaussLaguerre.cpp \
-		../Scripts/2b.cpp \
+main.o: ../Scripts/main.cpp ../Scripts/2b.cpp \
 		../Scripts/lib.h \
 		../Scripts/GaussLegendreQuadrature.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Scripts/main.cpp

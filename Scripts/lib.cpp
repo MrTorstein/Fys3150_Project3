@@ -168,19 +168,10 @@ double lib::Funk(double r1, double r2)
     }
     else
     {
-        return 1 / fabs(sign * r1 - sign * r2) * exp(-2 * (r1 + r2));
+        return 1 / fabs(r1 - r2) * exp(-2 * (r1 + r2));
     }
 }
 // End of function Funk
-
-double lib::int_function(double x)
-{
-    int alpha = 2;
-
-    double value = alpha; //r_1**2*r_2**2*np.sin(theta_1)*np.sin(theta_2)*np.exp(-2*alpha*(r_1+r_2));
-
-    return value;
-}
 
 #undef EPS
 #undef MAXIT

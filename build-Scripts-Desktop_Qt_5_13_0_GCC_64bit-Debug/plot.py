@@ -14,10 +14,12 @@ for i in fl:
 for j in range(len(integration)):
     x.append(j)
 
-plt.plot(x,integration, label = "N = 3")
+plt.plot(x,integration, label = "N = 5")
 plt.legend()
 plt.title('Integration approximation by sum')
 plt.xlabel('number of summations')
 plt.ylabel('integrationvalue')
+plt.savefig("Figur00.png")
+
 plt.show()
 

@@ -19,5 +19,7 @@ plt.legend()
 plt.title('Integration approximation by sum')
 plt.xlabel('number of summations')
 plt.ylabel('integrationvalue')
+plt.save("Figur00.png")
+
 plt.show()
 
