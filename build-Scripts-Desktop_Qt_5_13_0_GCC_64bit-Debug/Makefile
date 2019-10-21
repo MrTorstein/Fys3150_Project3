@@ -53,10 +53,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Scripts/GaussLegendreQuadrature.cpp \
+		../Scripts/lib.cpp \
 		../Scripts/main.cpp 
 OBJECTS       = GaussLegendreQuadrature.o \
+		lib.o \
 		main.o
-DIST          = /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_pre.prf \
+DIST          = ../Scripts/example.txt \
+		../Scripts/main \
+		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/common/unix.conf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/common/linux.conf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/common/sanitize.conf \
@@ -232,6 +236,7 @@ DIST          = /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_post.prf \
+		../Scripts/.qmake.stash \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -245,7 +250,10 @@ DIST          = /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/exceptions.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/lex.prf \
-		../Scripts/Scripts.pro GaussLegendreQuadrature.h ../Scripts/GaussLegendreQuadrature.cpp \
+		../Scripts/Scripts.pro GaussLaguerre.h \
+		GaussLegendreQuadrature.h \
+		lib.h ../Scripts/GaussLegendreQuadrature.cpp \
+		../Scripts/lib.cpp \
 		../Scripts/main.cpp
 QMAKE_TARGET  = Scripts
 DESTDIR       = 
@@ -434,6 +442,7 @@ Makefile: ../Scripts/Scripts.pro /home/torstein/Qt/5.13.0/gcc_64/mkspecs/linux-g
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -625,6 +634,7 @@ Makefile: ../Scripts/Scripts.pro /home/torstein/Qt/5.13.0/gcc_64/mkspecs/linux-g
 /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/qt_config.prf:
 /home/torstein/Qt/5.13.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/toolchain.prf:
 /home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -682,10 +692,19 @@ compiler_clean:
 
 ####### Compile
 
-GaussLegendreQuadrature.o: ../Scripts/GaussLegendreQuadrature.cpp ../Scripts/GaussLegendreQuadrature.h
+GaussLegendreQuadrature.o: ../Scripts/GaussLegendreQuadrature.cpp ../Scripts/GaussLegendreQuadrature.h \
+		../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o GaussLegendreQuadrature.o ../Scripts/GaussLegendreQuadrature.cpp
 
-main.o: ../Scripts/main.cpp 
+lib.o: ../Scripts/lib.cpp ../Scripts/lib.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lib.o ../Scripts/lib.cpp
+
+main.o: ../Scripts/main.cpp ../Scripts/GaussLaguerre.cpp \
+		../Scripts/gauss-legendre.cpp \
+		../Scripts/2b.cpp \
+		../Scripts/GaussLaguerre.h \
+		../Scripts/GaussLegendreQuadrature.h \
+		../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Scripts/main.cpp
 
 ####### Install
