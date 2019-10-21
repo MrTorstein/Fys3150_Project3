@@ -5,7 +5,7 @@
 class GaussLegendreQuadrature
 {
 public:
-    double Solver(int, double *, double *, double *);
+    double Solver(int);
 };
 
 #endif // GAUSSLEGENDREQUADRATURE_H

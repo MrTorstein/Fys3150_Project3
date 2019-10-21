@@ -19,7 +19,7 @@ using namespace std;
  ** of length n of the Gauss--Legendre n--point quadrature formulae.
  */
 
-double lib::gammln(double);
+//double lib::gammln(double);
 
 //  Note that you need to call it with a given value of alpha,
 // called alf here. This comes from x^{alpha} exp(-x)
@@ -160,18 +160,27 @@ double lib::Legendre(int n, double x)
 }
 // end of function Legendre
 
-double lib::Funk(double x1, double x2)
+double lib::Funk(double r1, double r2)
 {
-    if(fabs(x1 - x2) < pow(10, -10))
+    if(fabs(r1 - r2) < pow(10, -10))
     {
         return 0;
     }
     else
     {
-        return 1 / fabs(sign * x1 - sign * x2) * exp(-2 * (x1 + x2));
+        return 1 / fabs(sign * r1 - sign * r2) * exp(-2 * (r1 + r2));
     }
 }
 // End of function Funk
+
+double lib::int_function(double x)
+{
+    int alpha = 2;
+
+    double value = alpha; //r_1**2*r_2**2*np.sin(theta_1)*np.sin(theta_2)*np.exp(-2*alpha*(r_1+r_2));
+
+    return value;
+}
 
 #undef EPS
 #undef MAXIT

@@ -2,7 +2,6 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include <cmath>
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -35,8 +34,8 @@ void integrate_gaulag(){
     double* phi = new double[N];
     double* w_phi = new double[N];
     //Using Gauss-laguerre to fill the arrays where the integration variable goes from 0 to infinity
-    //Using Gauss-legendre to fill the arrays with defined integration limits
     Lib->gauss_laguerre(r, w_r, N, 2);
+    //Using Gauss-legendre to fill the arrays with defined integration limits
     Lib->gauleg(0, PI, theta, w_theta, N);
     Lib->gauleg(0, 2*PI, phi, w_phi, N);
 
