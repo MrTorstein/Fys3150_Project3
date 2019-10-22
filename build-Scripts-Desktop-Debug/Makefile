@@ -131,6 +131,7 @@ DIST          = ../Scripts/example.txt \
 		/usr/lib64/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib64/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib64/qt5/mkspecs/features/spec_post.prf \
+		../Scripts/.qmake.stash \
 		/usr/lib64/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib64/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib64/qt5/mkspecs/features/default_pre.prf \
@@ -145,7 +146,8 @@ DIST          = ../Scripts/example.txt \
 		/usr/lib64/qt5/mkspecs/features/yacc.prf \
 		/usr/lib64/qt5/mkspecs/features/lex.prf \
 		../Scripts/Scripts.pro GaussLegendreQuadrature.h \
-		lib.h ../Scripts/GaussLegendreQuadrature.cpp \
+		MonteCarlo.h \
+		MonteCarloImproved.h ../Scripts/GaussLegendreQuadrature.cpp \
 		../Scripts/lib.cpp \
 		../Scripts/main.cpp
 QMAKE_TARGET  = Scripts
@@ -230,6 +232,7 @@ Makefile: ../Scripts/Scripts.pro /usr/lib64/qt5/mkspecs/linux-g++/qmake.conf /us
 		/usr/lib64/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib64/qt5/mkspecs/linux-g++/qmake.conf \
 		/usr/lib64/qt5/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/usr/lib64/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib64/qt5/mkspecs/features/toolchain.prf \
 		/usr/lib64/qt5/mkspecs/features/default_pre.prf \
@@ -316,6 +319,7 @@ Makefile: ../Scripts/Scripts.pro /usr/lib64/qt5/mkspecs/linux-g++/qmake.conf /us
 /usr/lib64/qt5/mkspecs/features/qt_config.prf:
 /usr/lib64/qt5/mkspecs/linux-g++/qmake.conf:
 /usr/lib64/qt5/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /usr/lib64/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib64/qt5/mkspecs/features/toolchain.prf:
 /usr/lib64/qt5/mkspecs/features/default_pre.prf:
@@ -382,6 +386,10 @@ lib.o: ../Scripts/lib.cpp ../Scripts/lib.h
 
 main.o: ../Scripts/main.cpp ../Scripts/2b.cpp \
 		../Scripts/lib.h \
+		../Scripts/MonteCarlo.cpp \
+		../Scripts/MonteCarlo.h \
+		../Scripts/MonteCarloImproved.cpp \
+		../Scripts/MonteCarloImproved.h \
 		../Scripts/GaussLegendreQuadrature.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Scripts/main.cpp
 

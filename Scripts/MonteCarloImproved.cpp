@@ -10,6 +10,7 @@
 #include <lib.h>
 
 #define PI 3.14159265358979
+#define EPS 3.0e-14
 
 using namespace std;
 
@@ -18,11 +19,11 @@ void MonteCarloImproved::SolverI(int N, double * var_fp, double * avg_fp)
     lib * Lib = new lib;
 
     double tol = pow(10, -10);
-    double lam = - log(tol) / 2;
+    //double lam = - log(tol) / 2;
 
     random_device rd;  //Will be used to obtain a seed for the random number engine
     mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
-    uniform_int_distribution<> dis(0, 1);
+    uniform_real_distribution<double> dis(0, 1);
 
     double x_1;
     double r_1;
@@ -48,12 +49,14 @@ void MonteCarloImproved::SolverI(int N, double * var_fp, double * avg_fp)
         avg_fp[0] += f;
         var_fp[0] += f * f;
 
-        //cout << "f_" << i << " " << f[i] << endl;
     }
+    avg_fp[0] *= PI*PI*PI*PI/(4*1024);
     avg_fp[0] /= (double) N;
-    cout << N << " " << var_fp[0] / (double) N << " " << - avg_fp[0] * avg_fp[0] << endl;
-    var_fp[0] = var_fp[0] / (double) N - avg_fp[0] * avg_fp[0];
+    //cout << avg_fp[0] << endl;
+    //cout << N << " " << var_fp[0] / (double) N << " " << - avg_fp[0] * avg_fp[0] << endl;
+    //var_fp[0] = var_fp[0] / (double) N - avg_fp[0] * avg_fp[0];
 
     //cout << "Variance= " << var_f << " Integral = " << avg_f << endl;
-
 }
+
+

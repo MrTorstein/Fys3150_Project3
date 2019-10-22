@@ -13,8 +13,8 @@ using namespace std;
 
 int main()
 {   
-    const int N = 5;
-
+    //const int N = 5;
+    /*
     //Gauss-Legendre
     GaussLegendreQuadrature * GLQ = new GaussLegendreQuadrature;
 
@@ -42,21 +42,27 @@ int main()
         myfile1 << n << " " << var_f[0] << " " << avg_f[0] << endl;
     }
     myfile1.close();
-
+    */
     // Monte Carlo Method
     MonteCarloImproved * MCI = new MonteCarloImproved;
-
+   
     ofstream myfile2;
     myfile2.open ("data_MCI.txt");
 
     for (int n = 1; n <= pow(10, 4); n++)
     {
-        double * var_fp = new double [1];
-        double * avg_fp = new double [1];
+        double* var_fp = new double[1];
+        double* avg_fp = new double[1];
         MCI->SolverI(n, var_fp, avg_fp);
-        myfile2 << n << " " << var_fp[0] << " " << avg_fp[0] << endl;
+        myfile2 << n << " " << avg_fp[0] << endl;
     }
     myfile2.close();
-
+}
+/*
+    double * var_fp = new double [1];
+    double * avg_fp = new double [1];
+    MCI->SolverI(pow(10,6), var_fp, avg_fp);
+    //cout << avg_fp[0] << endl;
     return 0;
 }
+*/
