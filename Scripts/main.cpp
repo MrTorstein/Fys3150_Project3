@@ -23,12 +23,12 @@ int main()
     cout << "N = " << N << endl;
     cout << "res " << res << endl;
 
-    /*
+
     //Gauss-laguerre
     integrate_gaulag();
-    */
 
-    /*
+
+
     // Monte Carlo Method
     MonteCarlo * MC = new MonteCarlo;
 
@@ -43,8 +43,8 @@ int main()
         myfile1 << n << " " << var_f[0] << " " << avg_f[0] << endl;
     }
     myfile1.close();
-    */
-    /*
+
+
     // Monte Carlo Method
     MonteCarloImproved * MCI = new MonteCarloImproved;
 
@@ -59,6 +59,6 @@ int main()
         myfile2 << n << " " << var_fp[0] << " " << avg_fp[0] << endl;
     }
     myfile2.close();
-    */
+
     return 0;
 }
