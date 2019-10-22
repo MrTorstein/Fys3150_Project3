@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Scripts/GaussLegendreQuadrature.cpp \
+		../Scripts/MonteCarlo.cpp \
 		../Scripts/lib.cpp \
 		../Scripts/main.cpp 
 OBJECTS       = GaussLegendreQuadrature.o \
+		MonteCarlo.o \
 		lib.o \
 		main.o
 DIST          = ../Scripts/example.txt \
@@ -251,7 +253,9 @@ DIST          = ../Scripts/example.txt \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/torstein/Qt/5.13.0/gcc_64/mkspecs/features/lex.prf \
 		../Scripts/Scripts.pro GaussLegendreQuadrature.h \
+		MonteCarlo.h \
 		lib.h ../Scripts/GaussLegendreQuadrature.cpp \
+		../Scripts/MonteCarlo.cpp \
 		../Scripts/lib.cpp \
 		../Scripts/main.cpp
 QMAKE_TARGET  = Scripts
@@ -695,12 +699,17 @@ GaussLegendreQuadrature.o: ../Scripts/GaussLegendreQuadrature.cpp ../Scripts/Gau
 		../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o GaussLegendreQuadrature.o ../Scripts/GaussLegendreQuadrature.cpp
 
+MonteCarlo.o: ../Scripts/MonteCarlo.cpp ../Scripts/MonteCarlo.h \
+		../Scripts/lib.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o MonteCarlo.o ../Scripts/MonteCarlo.cpp
+
 lib.o: ../Scripts/lib.cpp ../Scripts/lib.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o lib.o ../Scripts/lib.cpp
 
 main.o: ../Scripts/main.cpp ../Scripts/2b.cpp \
 		../Scripts/lib.h \
-		../Scripts/GaussLegendreQuadrature.h
+		../Scripts/GaussLegendreQuadrature.h \
+		../Scripts/MonteCarlo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Scripts/main.cpp
 
 ####### Install
