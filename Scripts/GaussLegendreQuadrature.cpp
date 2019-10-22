@@ -57,7 +57,7 @@ double GaussLegendreQuadrature::Solver(int N)
                         for (int n = 0; n < N; n++)
         {
             myfile << Result << endl;
-            Result += lam * Lib->Funk(lam * (x1[i] + y1[j] + z1[k]), lam * (x2[l] + y2[m] + z2[n])) * w[i] * w[j] * w[k] * w[l] * w[m] * w[n] / 1024;
+            Result += lam * Lib->Funk(lam * x1[i], lam * y1[j], lam * z1[k], lam * x2[l], lam * y2[m], lam * z2[n]) * w[i] * w[j] * w[k] * w[l] * w[m] * w[n] / 1024;
         }
 
     myfile << Result << endl;

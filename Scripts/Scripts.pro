@@ -7,12 +7,14 @@ SOURCES += \
         2b.cpp \
         GaussLegendreQuadrature.cpp \
         MonteCarlo.cpp \
+        MonteCarloImproved.cpp \
         lib.cpp \
         main.cpp
 
 HEADERS += \
     GaussLegendreQuadrature.h \
     MonteCarlo.h \
+    MonteCarloImproved.h \
     lib.h
 
 DISTFILES += \

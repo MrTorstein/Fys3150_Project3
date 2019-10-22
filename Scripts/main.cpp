@@ -23,18 +23,19 @@ int main()
     cout << "N = " << N << endl;
     cout << "res " << res << endl;
 
-
+    /*
     //Gauss-laguerre
     integrate_gaulag();
+    */
 
-
+    /*
     // Monte Carlo Method
     MonteCarlo * MC = new MonteCarlo;
 
     ofstream myfile1;
     myfile1.open ("data_MC.txt");
 
-    for (int n = 1; n <= pow(10, 4); n++)
+    for (int n = 1; n <= pow(10, 1); n++)
     {
         double * var_f = new double [1];
         double * avg_f = new double [1];
@@ -42,7 +43,8 @@ int main()
         myfile1 << n << " " << var_f[0] << " " << avg_f[0] << endl;
     }
     myfile1.close();
-
+    */
+    /*
     // Monte Carlo Method
     MonteCarloImproved * MCI = new MonteCarloImproved;
 
@@ -57,6 +59,6 @@ int main()
         myfile2 << n << " " << var_fp[0] << " " << avg_fp[0] << endl;
     }
     myfile2.close();
-
+    */
     return 0;
 }

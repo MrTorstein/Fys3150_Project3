@@ -9,7 +9,7 @@ public:
     void gauss_laguerre(double *, double *, int, double);
     void gauleg(double, double, double *, double *, int);
     double Legendre(int, double);
-    double Funk(double, double);
+    double Funk(double, double, double, double, double, double);
     double FunkI(double, double, double, double, double, double);
 };
 
