@@ -147,7 +147,8 @@ DIST          = ../Scripts/example.txt \
 		/usr/lib64/qt5/mkspecs/features/lex.prf \
 		../Scripts/Scripts.pro GaussLegendreQuadrature.h \
 		MonteCarlo.h \
-		MonteCarloImproved.h ../Scripts/GaussLegendreQuadrature.cpp \
+		MonteCarloImproved.h \
+		lib.h ../Scripts/GaussLegendreQuadrature.cpp \
 		../Scripts/lib.cpp \
 		../Scripts/main.cpp
 QMAKE_TARGET  = Scripts

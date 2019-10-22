@@ -42,7 +42,7 @@ void MonteCarloImproved::SolverI(int N, double * var_fp, double * avg_fp)
         theta_1 = PI * dis(gen);
         phi_1 = 2*PI*dis(gen);
         x_2 = dis(gen);
-        r_2 = -log(1 - x_1);
+        r_2 = -log(1 - x_2);
         theta_2 = PI * dis(gen);
         phi_2 = 2*PI*dis(gen);
         f = Lib->FunkI(r_1, r_2, theta_1, theta_2, phi_1, phi_2);
@@ -50,7 +50,7 @@ void MonteCarloImproved::SolverI(int N, double * var_fp, double * avg_fp)
         var_fp[0] += f * f;
 
     }
-    avg_fp[0] *= PI*PI*PI*PI/(4*1024);
+    avg_fp[0] *= 4*PI*PI*PI*PI/(1024);
     avg_fp[0] /= (double) N;
     //cout << avg_fp[0] << endl;
     //cout << N << " " << var_fp[0] / (double) N << " " << - avg_fp[0] * avg_fp[0] << endl;

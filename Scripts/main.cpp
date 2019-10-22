@@ -56,6 +56,8 @@ int main()
     {
         double* var_fp = new double[1];
         double* avg_fp = new double[1];
+        var_fp[0] = 0;
+        avg_fp[0] = 0;
         MCI->SolverI(n, var_fp, avg_fp);
         myfile2 << n << " " << avg_fp[0] << endl;
     }
