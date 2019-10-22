@@ -14,7 +14,7 @@ SOURCES += \
 HEADERS += \
     GaussLegendreQuadrature.h \
     MonteCarlo.h \
-    MonteCarloImproved.h
+    MonteCarloImproved.h \
     lib.h
 
 DISTFILES += \

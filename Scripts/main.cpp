@@ -28,13 +28,14 @@ int main()
     integrate_gaulag();
 
 
+
     // Monte Carlo Method
     MonteCarlo * MC = new MonteCarlo;
 
     ofstream myfile1;
     myfile1.open ("data_MC.txt");
 
-    for (int n = 1; n <= pow(10, 4); n++)
+    for (int n = 1; n <= pow(10, 1); n++)
     {
         double * var_f = new double [1];
         double * avg_f = new double [1];
@@ -43,6 +44,8 @@ int main()
     }
     myfile1.close();
     */
+
+
     // Monte Carlo Method
     MonteCarloImproved * MCI = new MonteCarloImproved;
    
