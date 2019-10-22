@@ -10,6 +10,7 @@ public:
     void gauleg(double, double, double *, double *, int);
     double Legendre(int, double);
     double Funk(double, double);
+    double FunkI(double, double, double, double, double, double);
 };
 
 #endif // LIB_H

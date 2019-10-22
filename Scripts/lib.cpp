@@ -173,5 +173,18 @@ double lib::Funk(double r1, double r2)
 }
 // End of function Funk
 
+double lib::FunkI(double r_1, double r_2, double theta_1, double theta_2, double phi_1, double phi_2)
+{
+    double cos_beta = (cos(theta_1)*cos(theta_2)+sin(theta_1)*sin(theta_2)*cos(phi_1-phi_2));
+    if (abs(cos_beta - 1) < EPS)
+    {
+        return 0;
+    }
+    else
+    {
+        return sin(theta_1)*sin(theta_2)/sqrt(r_1*r_1+r_2*r_2-2*r_1*r_2*cos_beta);
+    }
+}
+//End of function Norm
 #undef EPS
 #undef MAXIT
