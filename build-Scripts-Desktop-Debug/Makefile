@@ -16,7 +16,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_QML_DEBUG
 CFLAGS        = -pipe -g -Wall -W -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -fopenmp -g -std=gnu++11 -Wall -W -fPIC $(DEFINES)
 INCPATH       = -I../Scripts -I. -I/usr/lib64/qt5/mkspecs/linux-g++
 QMAKE         = /usr/bin/qmake-qt5
 DEL_FILE      = rm -f
@@ -39,7 +39,7 @@ COMPRESS      = gzip -9f
 DISTNAME      = Scripts1.0.0
 DISTDIR = /home/ada/Documents/CompFys/Fys3150_Project3/build-Scripts-Desktop-Debug/.tmp/Scripts1.0.0
 LINK          = g++
-LFLAGS        = 
+LFLAGS        = -fopenmp
 LIBS          = $(SUBLIBS)    
 AR            = ar cqs
 RANLIB        = 
